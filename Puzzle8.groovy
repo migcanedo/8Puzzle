@@ -6,3 +6,18 @@ sP = (file.readLines() - "").collect {
 		it.toInteger()
 	}
 }
+
+// Detectamos donde esta el '0' en el arreglo del Puzzle Inicial.
+iz = sP.findIndexValues {
+	if (it.contains(0)){
+	    jz = it.findIndexValues { x ->
+    		x == 0
+    	}[0]
+    }
+    it.contains 0
+}[0]
+
+// Creamos el Puzzle con el arreglo armado previamente.
+sP = new Puzzle(sP, iz, jz)
+
+println sP
