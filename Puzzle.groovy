@@ -20,8 +20,7 @@ class Puzzle{
 
 		iZero = iZ
 		jZero = jZ
-		getAcciones()
-		aplicarHeuristica()
+		
 	}
 
 

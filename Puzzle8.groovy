@@ -20,4 +20,10 @@ iz = sP.findIndexValues {
 // Creamos el Puzzle con el arreglo armado previamente.
 sP = new Puzzle(sP, iz, jz)
 
-println sP
+path = new SolutionPath()
+path.addState(sP)
+path.addState(sP)
+path.addState(sP)
+
+
+println path
