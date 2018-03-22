@@ -1,4 +1,17 @@
-// Retornara el path de solucion.
+/*
+	Proyecto: 8-Puzzle
+	
+	Autores: Miguel C. Canedo R. 13-10214
+             Andres A. Buelvas V. 13-10184
+
+    Fecha: 23/03/2018
+*/
+
+/*
+	Funcion que simula el recorrido que haria el Algoritmo de Busqueda
+	A*, dado un estado inicial y retornaria el camino de menor costo desde 
+	el estado inicial hasta el estado meta.
+*/
 SolutionPath AStarSearch(startingPuzzle){
 	startSolution = new SolutionPath()
 	openPaths = new PriorityQueue<SolutionPath>()
@@ -60,32 +73,50 @@ SolutionPath AStarSearch(startingPuzzle){
 	null
 }
 
-
-
-// MAIN
-
-def file = new File(this.args[0])
-
-// Leemos el archivo y creamos el arreglo que tendra el Puzzle Inicial.
-sP = (file.readLines() - "").collect { 
-	it.split(" ").collect{
-		it.toInteger()
-	}
+/*
+	Main del Programa.
+*/
+// Verificamos si se especific un archivo de entrada.
+if (args.length < 1){
+	println "Debe indicar un archivo de entrada."
+	return
 }
 
-// Detectamos donde esta el '0' en el arreglo del Puzzle Inicial.
-iz = sP.findIndexValues {
-	if (it.contains(0)){
-	    jz = it.findIndexValues { x ->
-    		x == 0
-    	}[0]
-    }
-    it.contains 0
-}[0]
+// Intentamos abri r el archivo especificado, si no existe 
+// capturamos la excepcion.
+try {
+	def file = new File(this.args[0])
 
-// Creamos el Puzzle con el arreglo armado previamente.
-sP = new Puzzle(sP, iz, jz)
+	// Leemos el archivo y creamos el arreglo que tendra el Puzzle Inicial.
+	sP = (file.readLines() - "").collect { 
+		it.split(" ").collect{
+			it.toInteger()
+		}
+	}
 
-solucion = AStarSearch sP
-if (solucion) print solucion
-else println "No tiene Solucion."
+	// Detectamos donde esta el '0' en el arreglo del Puzzle Inicial.
+	iz = sP.findIndexValues {
+		if (it.contains(0)){
+		    jz = it.findIndexValues { x ->
+	    		x == 0
+	    	}[0]
+	    }
+	    it.contains 0
+	}[0]
+
+	// Creamos el Puzzle con el arreglo armado previamente.
+	sP = new Puzzle(sP, iz, jz)
+
+	// Buscamos el camino de menor costo mediante la Busqueda A*.
+	solucion = AStarSearch(sP)
+
+	// Si existe solucion la impirmimos
+	if (solucion) print solucion
+
+	//en caso contrario, notificamos que no existe solucion.
+	else println "No tiene Solucion."
+} catch (FileNotFoundException e){
+
+	println "El archivo no existe."
+
+}

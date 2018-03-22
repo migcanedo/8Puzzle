@@ -1,16 +1,35 @@
-class Puzzle{
-	int[][] ochoPuzzle
-	Integer id
-	HashSet<Integer> listaAcciones
-	int iZero
-	int jZero
-	int heuCost
+/*
+	Proyecto: 8-Puzzle
 	
+	Autores: Miguel C. Canedo R. 13-10214
+             Andres A. Buelvas V. 13-10184
+
+    Fecha: 23/03/2018
+*/
+
+/*
+	Clase que representa cada estado que puede poseer un tablero 
+	dentro del Grafo Implicito de Estados.
+*/
+class Puzzle{
+	int[][] ochoPuzzle					// Tablero del estado.
+	Integer id 							// Id que representa al estado.
+	HashSet<Integer> listaAcciones 		// Lista de las acciones que se pueden tomar.
+	int iZero 							// Fila donde se encuentra el espacio vacio.
+	int jZero							// Columna donde se encuentra el espacio vacio.
+	int heuCost							// Costo mediante la Heuristica Manhattan que posee este estado.
+	
+
+	/*
+		Constructor de la clase que recibe un arreglo que representa el tablero del estado
+		y las posicones (fila y columna) donde almacena a la casilla vacia.
+	*/
 	Puzzle(p, iZ, jZ){
 		ochoPuzzle = p
+		
+		// Construimos el id.
 		id = 0
-		int counter = 1
-
+		def counter = 1
 		for(i in 0..2){
 			for(j in 0..2){
 				id += p[i][j] * counter
@@ -20,10 +39,15 @@ class Puzzle{
 
 		iZero = iZ
 		jZero = jZ
-		getAcciones()
-		aplicarHeuristica()
+		getAcciones()			// Obtenemos las acciones logrables desde este estado.
+		aplicarHeuristica()		// Calculamos el costo de este estado.
 	}
 
+
+	/*
+		Metodo que segun la posicion de la casilla vacia, detecta cuales son las
+		acciones que se pueden lograr desde este estado.
+	*/
 	def getAcciones(){
 		// Posición a la que se puede mover el espacio vacio.
 		// 0: Arriba, 1: Izquierda, 2: Derecha, 3: Abajo
@@ -45,7 +69,10 @@ class Puzzle{
 		}	
 	}
 
-
+	/*
+		Metodo que calcula el costo aproximado que tendra este estado para alcanzar 
+		el estado meta, aplicando al Heurista Manhattan.
+	*/
 	def aplicarHeuristica(){
 		heuCost = 0
 		for(i in 0..2){
@@ -62,6 +89,9 @@ class Puzzle{
 		}
 	}
 
+	/*
+		Metodo que determina si el estado es o no el estado meta.
+	*/
 	def compareToGoal(){
 		for(i in 0..2){
 			for(j in 0..2){
@@ -75,6 +105,11 @@ class Puzzle{
 		true
 	}
 
+
+	/*
+		Metodo que contruye una coleccion con todos los estados sucesores 
+		del estado actual, segun las acciones que se puedan tomar.
+	*/
 	def getSucesores(){
 		def sucesores = new ArrayList<Puzzle>()
 
@@ -113,6 +148,9 @@ class Puzzle{
 		sucesores
 	}
 
+	/*
+		Metodo que permite crear una copia del estado actual del tablero.
+	*/
 	def copiarPuzzle(){
 		def copia = new int[3][3]
 		for(i in 0..2){
@@ -124,7 +162,10 @@ class Puzzle{
 		copia
 	}	
 
-
+	/*
+		Metod que logra determinar si un estado podra o no llegar al estado meta.
+		Es decir, determina si un  estado tiene o no solucion posible.
+	*/
 	def solvable(){
 		def found = new int[9]
 		def inv = 0
@@ -142,7 +183,10 @@ class Puzzle{
 		inv % 2 == 0
 	}
 
-
+	/*
+		Metodo que construye la representacion en cadena de caracteres
+		de los estados.
+	*/
 	String toString(){
 		def str = ""
 		for(i in 0..2){
