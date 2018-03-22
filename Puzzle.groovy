@@ -1,10 +1,10 @@
 class Puzzle{
-	private int[][] ochoPuzzle
-	private Integer id
-	private HashSet<Integer> listaAcciones
-	private int iZero
-	private int jZero
-	private int heuCost
+	int[][] ochoPuzzle
+	Integer id
+	HashSet<Integer> listaAcciones
+	int iZero
+	int jZero
+	int heuCost
 	
 	Puzzle(p, iZ, jZ){
 		ochoPuzzle = p
@@ -24,7 +24,7 @@ class Puzzle{
 		aplicarHeuristica()
 	}
 
-	private def getAcciones(){
+	def getAcciones(){
 		// Posición a la que se puede mover el espacio vacio.
 		// 0: Arriba, 1: Izquierda, 2: Derecha, 3: Abajo
 		listaAcciones = new HashSet<Integer>()
@@ -113,7 +113,7 @@ class Puzzle{
 		sucesores
 	}
 
-	private def copiarPuzzle(){
+	def copiarPuzzle(){
 		def copia = new int[3][3]
 		for(i in 0..2){
 			for(j in 0..2){

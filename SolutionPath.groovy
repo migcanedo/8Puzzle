@@ -1,6 +1,6 @@
-class SolutionPath{
-	private ArrayList<Puzzle> path
-	private int lenght
+class SolutionPath implements Comparable<SolutionPath> {
+	ArrayList<Puzzle> path
+	int lenght
 	
 	SolutionPath(){
 		path = new ArrayList<Puzzle>()
@@ -18,6 +18,25 @@ class SolutionPath{
 		lenght += 1
 	}
 
+	def getEnd(){
+		path.get(lenght - 1)
+	}
+
+	int getHeuCost(){
+		(getEnd().heuCost) + lenght
+	}
+
+	int compareTo(o){
+		(getHeuCost() - o.getHeuCost())
+	}
+
+	def clone(){
+		def p = (ArrayList<Puzzle>) path.clone()
+		def l = lenght
+		def copy = new SolutionPath(p, l)
+		
+		copy
+	}
 
 	String toString(){
 		def str2 = ""
