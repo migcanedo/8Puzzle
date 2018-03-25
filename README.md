@@ -20,11 +20,11 @@ cd 8Puzzle/
 ```
   4. Dar permisos de ejecucion al script de instalacion de Groovy.
 ```bash
-sudo chmod 755 installGroovy.sh
+chmod 755 installGroovy.sh
 ```
   5. Ejecutar dicho script para proceder a la instalacion.
 ```bash
-sudo ./installGroovy.sh
+./installGroovy.sh
 ```
   6. Por ultimo, para probar que la instalacion finalizo satisfactoria, revisamos la version de Groovy.
 ```bash
