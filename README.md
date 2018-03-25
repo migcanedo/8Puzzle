@@ -5,7 +5,7 @@
 - Andres A. Buelvas V.    13-10184
 
 ## Instalacón de Groovy
-  La forma mas sencilla de instalar Groovy en cualquier plataforma Bash es usando la herramienta **SDKMAN!**.
+  La forma mas sencilla de instalar Groovy en cualquier plataforma Bash es usando la herramienta **SDKMAN!**. Seguidamente se ilustran dos maneras de poder instalar Groovy:
   
 ### Easy Way
   En este repositorio se facilita un ejecutable para esta instalacion usando dicha herramienta y si lo desean utilizar deben seguir estos pasos:
