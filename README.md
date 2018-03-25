@@ -69,8 +69,8 @@ git clone https://github.com/migcanedo/8Puzzle 8Puzzle
 ```bash
 cd 8Puzzle/
 ```
-  4. Correr el programa `8Puzzle.groovy` suministrandole la direccion del caso prueba que desee utilizar.
+  4. Correr el programa `Puzzle8.groovy` suministrandole la direccion del caso prueba que desee utilizar.
 ```bash
-groovy 8Puzzle.groovy casosPrueba/caso1.txt
+groovy Puzzle8.groovy casosPrueba/caso1.txt
 ```
   5. Observe en la Terminal el resultado obtenido del programa.
