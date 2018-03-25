@@ -5,16 +5,16 @@
 - Andres A. Buelvas V.    13-10184
 
 ## Instalacón de Groovy
-  La forma mas sencilla de instalar Groovy en cualquier plataforma Bash es usando la herramienta SDKMAN!.
+  La forma mas sencilla de instalar Groovy en cualquier plataforma Bash es usando la herramienta **SDKMAN!**.
   
-  ### Easy Way
+### Easy Way
   En este repositorio se facilita un ejecutable para esta instalacion usando dicha herramienta y si lo desean utilizar deben seguir estos pasos:
   1. Abrir una Terminal
   2. Clonar el repositorio
   ```bash
 git clone https://github.com/migcanedo/8Puzzle 8Puzzle
 ```
-  3. Entrar al Directorio 8Puzzle.
+  3. Entrar al Directorio **8Puzzle**.
   ```bash
 cd 8Puzzle/
 ```
@@ -31,7 +31,7 @@ sudo ./installGroovy.sh
 groovy -version
 ```
   
-  ### Hard Way
+### Hard Way
   Pero si usted es una persona curiosa que desea saber trabajos realiza nuestro script, aqui le dejamos los pasos que debe realizar para la instalacion de Groovy, usando la herramienta SDKMAN!, sin hacer uso del script facilitado:
   
   1. Abrir una nueva Terminal.
@@ -61,7 +61,7 @@ groovy -version
 ```bash
 git clone https://github.com/migcanedo/8Puzzle 8Puzzle
 ```
-  3. Entrar al Directorio 8Puzzle.
+  3. Entrar al Directorio **8Puzzle**.
 ```bash
 cd 8Puzzle/
 ```
