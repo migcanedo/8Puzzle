@@ -28,7 +28,7 @@ sudo ./installGroovy.sh
 groovy -version
 ```
 
-  Pero si usted es una persona curiosa que desea saber trabajos realiza nuestro script, aqui le dejamos los pasos que debe realizar para la instalacion de Groovy sin el uso del script:
+  Pero si usted es una persona curiosa que desea saber trabajos realiza nuestro script, aqui le dejamos los pasos que debe realizar para la instalacion de Groovy, usando la herramienta SDKMAN!, sin hacer uso del script facilitado:
   
   - Abrir una nueva Terminal.
   - Introduzca la siguiente linea en ella.
