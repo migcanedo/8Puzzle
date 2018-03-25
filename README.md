@@ -57,7 +57,7 @@ groovy -version
 ## Corrida del Proyecto
   Para la corrida en este repositorio se facilita un directorio con diferentes *Casos de Prueba*, y para ello se deben seguir los siguientes pasos:
   1. Abrir una Terminal.
-  2. Clonar el repositorio (En caso de haber instalado Groovy medienate el 'Easy Way', puede saltarse este paso).
+  2. Clonar el repositorio (En caso de haber instalado Groovy medienate el *'Easy Way'*, puede saltarse este paso).
 ```bash
 git clone https://github.com/migcanedo/8Puzzle 8Puzzle
 ```
