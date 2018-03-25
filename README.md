@@ -9,24 +9,24 @@
   
   ### Easy Way
   En este repositorio se facilita un ejecutable para esta instalacion usando dicha herramienta y si lo desean utilizar deben seguir estos pasos:
-  - Abrir una Terminal
-  - Clonar el repositorio
+  1. Abrir una Terminal
+  2. Clonar el repositorio
   ```bash
 git clone https://github.com/migcanedo/8Puzzle 8Puzzle
 ```
-  - Entrar al Directorio 8Puzzle.
+  3. Entrar al Directorio 8Puzzle.
   ```bash
 cd 8Puzzle/
 ```
-  - Dar permisos de ejecucion al script de instalacion de Groovy.
+  4. Dar permisos de ejecucion al script de instalacion de Groovy.
 ```bash
 sudo chmod 755 installGroovy.sh
 ```
-  - Ejecutar dicho script para proceder a la instalacion.
+  5. Ejecutar dicho script para proceder a la instalacion.
 ```bash
 sudo ./installGroovy.sh
 ```
-  - Por ultimo, para probar que la instalacion finalizo satisfactoria, revisamos la version de Groovy.
+  6. Por ultimo, para probar que la instalacion finalizo satisfactoria, revisamos la version de Groovy.
 ```bash
 groovy -version
 ```
@@ -34,24 +34,39 @@ groovy -version
   ### Hard Way
   Pero si usted es una persona curiosa que desea saber trabajos realiza nuestro script, aqui le dejamos los pasos que debe realizar para la instalacion de Groovy, usando la herramienta SDKMAN!, sin hacer uso del script facilitado:
   
-  - Abrir una nueva Terminal.
-  - Introduzca la siguiente linea en ella.
+  1. Abrir una nueva Terminal.
+  2. Introduzca la siguiente linea en ella.
 ```bash
 curl -s get.sdkman.io | bash
 ```
-  - Siga las instrucciones en pantalla para completar la instalacion.
-  - Luego, introduzca la siguiente linea.
+  3. Siga las instrucciones en pantalla para completar la instalacion.
+  4. Luego, introduzca la siguiente linea.
 ```bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 ```
-  - Luego instale la version mas reciente de Groovy.
+  5. Luego instale la version mas reciente de Groovy.
 ```bash
 sdk install groovy
 ```
-  - Por ultimo, para probar que la instalacion finalizo satisfactoria, revisamos la version de Groovy.
+  6. Por ultimo, para probar que la instalacion finalizo satisfactoria, revisamos la version de Groovy.
 ```bash
 groovy -version
 ```
   
 
 ## Corrida del Proyecto
+  Para la corrida en este repositorio se facilita un directorio con diferentes Casos de Prueba, y para ello se deben seguir los siguientes pasos (En caso de haber instalado Groovy medienate el 'Easy Way', debe saltarse l):
+  1. Abrir una Terminal.
+  2. Clonar el repositorio (En caso de haber instalado Groovy medienate el 'Easy Way', puede saltarse este paso).
+```bash
+git clone https://github.com/migcanedo/8Puzzle 8Puzzle
+```
+  3. Entrar al Directorio 8Puzzle.
+```bash
+cd 8Puzzle/
+```
+  4. Correr el programa `8Puzzle.groovy` suministrandole la direccion del caso prueba que desee utilizar.
+```bash
+groovy 8Puzzle.groovy casosPrueba/caso1.txt
+```
+  5. Observe en la Terminal el resultado obtenido del programa.
