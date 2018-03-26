@@ -1,5 +1,5 @@
 # 8Puzzle
-
+  Solucionador de tableros de 8-Puzzle mediante el uso del Algoritmo de Busqueda Informada A*.
 ## Autores
 - Miguel C. Canedo R.     13-10214
 - Andres A. Buelvas V.    13-10184
